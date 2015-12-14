@@ -57,6 +57,7 @@
 
 
 
+        android:textSize="32sp"
         android:clickable="true" />
 
 
