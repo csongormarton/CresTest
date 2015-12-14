@@ -52,7 +52,6 @@
         android:text="@string/string_registration"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-
         android:clickable="true" />
 
 
