@@ -20,6 +20,9 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
 
+                Intent nextActivity = new Intent(SplashScreenActivity.this,LoginActivity.class);
+                startActivity(nextActivity);
+
                 // Következő Activity
 
 
