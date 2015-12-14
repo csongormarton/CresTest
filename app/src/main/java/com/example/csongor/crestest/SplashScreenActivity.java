@@ -23,8 +23,6 @@ public class SplashScreenActivity extends AppCompatActivity {
                 Intent nextActivity = new Intent(SplashScreenActivity.this,LoginActivity.class);
                 startActivity(nextActivity);
 
-                // Következő Activity
-
 
                 finish();
             }
