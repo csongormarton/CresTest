@@ -12,7 +12,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+//alma
 //        User user = new User(1, "Arni", "valami2@valami.hu", "123456", false);
 //        Log.e("User", user.toString());
 //        user.save();
