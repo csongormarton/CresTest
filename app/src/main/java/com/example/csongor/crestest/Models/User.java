@@ -1,4 +1,4 @@
-package com.example.csongor.crestest;
+package com.example.csongor.crestest.Models;
 
 
 import com.orm.SugarRecord;
