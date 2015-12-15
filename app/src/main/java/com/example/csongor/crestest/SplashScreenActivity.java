@@ -6,6 +6,9 @@ import android.os.Bundle;
 
 import android.os.Handler;
 
+/**
+ * Created by Csongor on 2015-12-14.
+ */
 public class SplashScreenActivity extends AppCompatActivity {
 
     private static int SPLASH_TIME_OUT = 3000;
@@ -20,9 +23,8 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent nextActivity = new Intent(SplashScreenActivity.this,LoginActivity.class);
+                Intent nextActivity = new Intent(SplashScreenActivity.this, LoginActivity.class);
                 startActivity(nextActivity);
-
 
                 finish();
             }

@@ -3,6 +3,9 @@ package com.example.csongor.crestest.Models;
 
 import com.orm.SugarRecord;
 
+/**
+ * Created by Medea on 2015-12-6.
+ */
 public class User extends SugarRecord<User> {
     int userID;
     String name;

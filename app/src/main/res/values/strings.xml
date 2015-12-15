@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">Cres Test</string>
 
+    <!-- Csongor -->
     <string name="string_hint_loginName">Email</string>
     <string name="string_hint_loginPassword">Jelszó</string>
     <string name="string_login">Bejelentkezés</string>
     <string name="string_registration">Új felhasználó regisztrálása!</string>
+
+    <!-- Medea -->
+
 </resources>

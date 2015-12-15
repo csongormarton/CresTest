@@ -8,6 +8,9 @@ import com.example.csongor.crestest.Models.User;
 
 import java.util.List;
 
+/**
+ * Created by Csongor on 2015-12-4.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     @Override

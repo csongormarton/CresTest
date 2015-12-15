@@ -4,5 +4,9 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF4081</color>
 
+    <!-- Csongor -->
     <color name="color_bg">#262626</color>
+
+    <!-- Medea -->
+
 </resources>
