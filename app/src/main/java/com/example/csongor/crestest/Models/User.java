@@ -1,35 +1,22 @@
 package com.example.csongor.crestest.Models;
 
-
 import com.orm.SugarRecord;
 
-/**
- * Created by Medea on 2015-12-6.
- */
+
 public class User extends SugarRecord<User> {
-    int userID;
     String name;
     String email;
     String password;
-    boolean admin;
+    boolean isAdmin;
 
     public User() {
     }
 
-    public User(int userID, String name, String email, String password, boolean admin) {
-        this.userID = userID;
+    public User(String name, String email, String password, boolean isAdmin) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.admin = admin;
-    }
-
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
+        this.isAdmin = isAdmin;
     }
 
     public String getName() {
@@ -57,21 +44,20 @@ public class User extends SugarRecord<User> {
     }
 
     public boolean isAdmin() {
-        return admin;
+        return isAdmin;
     }
 
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userID=" + userID +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", admin=" + admin +
+                ", admin=" + isAdmin +
                 '}';
     }
 }
