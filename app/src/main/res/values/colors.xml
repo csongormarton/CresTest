@@ -6,6 +6,8 @@
 
     <!-- Csongor -->
     <color name="color_bg">#262626</color>
+    <color name="color_tv_question_bg">#333333</color>
+    <color name="color_tv_answer_bg">#404040</color>
 
     <!-- Medea -->
 

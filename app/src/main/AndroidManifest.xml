@@ -35,9 +35,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdminActivity" >
+        <activity
+            android:name=".AdminActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
-        <activity android:name=".TestActivity" >
+        <activity
+            android:name=".TestActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
     </application>
 

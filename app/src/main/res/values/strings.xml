@@ -8,6 +8,9 @@
     <string name="string_registration">Új felhasználó regisztrálása!</string>
     <string name="string_bad_email">Az email cím nem megfelelő!</string>
     <string name="string_empty_password_field">A jelszó mező üres!</string>
+    <string name="string_btn_test_back">Vissza</string>
+    <string name="string_btn_test_next">Következő</string>
+    <string name="string_btn_test_submint">Vége</string>
 
     <!-- Medea -->
 
