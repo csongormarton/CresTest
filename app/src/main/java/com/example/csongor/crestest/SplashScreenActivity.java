@@ -29,6 +29,8 @@ public class SplashScreenActivity extends AppCompatActivity {
             User user = new User("Admin", "admin@valami.hu", "123456", true);
             Log.e("User", user.toString());
             user.save();
+            User user2 = new User("User", "user@valami.hu", "123456", false);
+            user2.save();
 
             ///////////////////
             SharedPreferences.Editor editor = wmbPreference.edit();

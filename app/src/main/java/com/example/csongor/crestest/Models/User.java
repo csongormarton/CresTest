@@ -3,7 +3,7 @@ package com.example.csongor.crestest.Models;
 import com.orm.SugarRecord;
 
 
-public class User extends SugarRecord<User> {
+public class User extends SugarRecord {
     String name;
     String email;
     String password;

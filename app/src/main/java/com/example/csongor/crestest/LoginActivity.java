@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.csongor.crestest.Models.Answer;
+import com.example.csongor.crestest.Models.Question;
 import com.example.csongor.crestest.Models.User;
 
 import java.util.List;
@@ -25,6 +27,22 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Question question = new Question("Hany eves a kapitany", "picture", true);
+        question.save();
+        Answer answer1 = new Answer(question, "50", true);
+        Answer answer2 = new Answer(question, "nem 50", false);
+        answer1.save();
+        answer2.save();
+
+        List<Question> qestions = Question.listAll(Question.class);
+        for(Question q : qestions){
+            Log.e("QUESTION: ", q.toString());
+            List<Answer> answers = q.getAnswers();
+            for (Answer a : answers){
+                Log.e("ANSWER : ", a.toString());
+            }
+        }
 
         Button btnLogin = (Button)this.findViewById(R.id.btn_login);
         btnLogin.setOnClickListener(new View.OnClickListener() {

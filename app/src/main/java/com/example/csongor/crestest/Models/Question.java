@@ -2,32 +2,25 @@ package com.example.csongor.crestest.Models;
 
 import com.orm.SugarRecord;
 
-/**
- * Created by Medea on 2015-12-14.
- */
-public class Question extends SugarRecord<Question>{
+import java.util.List;
 
-    int questionID;
+public class Question extends SugarRecord{
+
     String question;
     String picture;
-    boolean isInclude;
+    boolean isActive;
 
     public Question() {
     }
 
-    public Question(int questionID, String question, String picture, boolean isInclude) {
-        this.questionID = questionID;
+    public Question(String question, String picture, boolean isActive) {
         this.question = question;
         this.picture = picture;
-        this.isInclude = isInclude;
+        this.isActive = isActive;
     }
 
-    public int getQuestionID() {
-        return questionID;
-    }
-
-    public void setQuestionID(int questionID) {
-        this.questionID = questionID;
+    public List<Answer> getAnswers(){
+        return Answer.find(Answer.class, "question = ?", new String[]{getId().toString()});
     }
 
     public String getQuestion() {
@@ -46,21 +39,20 @@ public class Question extends SugarRecord<Question>{
         this.picture = picture;
     }
 
-    public boolean isInclude() {
-        return isInclude;
+    public boolean isActive() {
+        return isActive;
     }
 
     public void setIsInclude(boolean isInclude) {
-        this.isInclude = isInclude;
+        this.isActive = isInclude;
     }
 
     @Override
     public String toString() {
         return "Question{" +
-                "questionID=" + questionID +
-                ", question='" + question + '\'' +
+                "question='" + question + '\'' +
                 ", picture='" + picture + '\'' +
-                ", isInclude=" + isInclude +
+                ", isActive=" + isActive +
                 '}';
     }
 }

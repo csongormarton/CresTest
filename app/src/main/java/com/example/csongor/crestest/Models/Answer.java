@@ -2,22 +2,28 @@ package com.example.csongor.crestest.Models;
 
 import com.orm.SugarRecord;
 
-/**
- * Created by Medea on 2015-12-14.
- */
-public class Answer extends SugarRecord<Answer>{
+
+public class Answer extends SugarRecord{
 
     String answer;
     boolean isCorrect;
-    int questionID;
+    Question question;
 
     public Answer() {
     }
 
-    public Answer(String answer, boolean isCorrect, int questionID) {
+    public Answer(Question question, String answer, boolean isCorrect) {
+        this.question = question;
         this.answer = answer;
         this.isCorrect = isCorrect;
-        this.questionID = questionID;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 
     public String getAnswer() {
@@ -36,20 +42,11 @@ public class Answer extends SugarRecord<Answer>{
         this.isCorrect = isCorrect;
     }
 
-    public int getQuestionID() {
-        return questionID;
-    }
-
-    public void setQuestionID(int questionID) {
-        this.questionID = questionID;
-    }
-
     @Override
     public String toString() {
         return "Answer{" +
                 "answer='" + answer + '\'' +
                 ", isCorrect=" + isCorrect +
-                ", questionID=" + questionID +
                 '}';
     }
 }
