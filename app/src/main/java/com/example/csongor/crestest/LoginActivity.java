@@ -9,6 +9,8 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.csongor.crestest.Models.Answer;
@@ -28,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         Question question = new Question("Hany eves a kapitany", "picture", true);
         question.save();
         Answer answer1 = new Answer(question, "50", true);
@@ -37,12 +40,13 @@ public class LoginActivity extends AppCompatActivity {
 
         List<Question> qestions = Question.listAll(Question.class);
         for(Question q : qestions){
-            Log.e("QUESTION: ", q.toString());
+            //Log.e("QUESTION: ", q.toString());
             List<Answer> answers = q.getAnswers();
             for (Answer a : answers){
-                Log.e("ANSWER : ", a.toString());
+                //Log.e("ANSWER : ", a.toString());
             }
         }
+        ////////////////////////////////////////////
 
         Button btnLogin = (Button)this.findViewById(R.id.btn_login);
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -61,14 +65,18 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        List<User> users = User.listAll(User.class);
-        for(int i=0; i<users.size(); i++){
-            Log.e("User", users.get(i).toString());
-        }
+        TextView tvRegistration = (TextView)this.findViewById(R.id.tv_registration);
+        tvRegistration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToNextActivity();
+            }
+        });
+
     }
 
     public boolean isValidDetails(){
-        EditText etLoginEmail = (EditText)this.findViewById(R.id.et_login_name);
+        EditText etLoginEmail = (EditText)this.findViewById(R.id.et_login_email);
         EditText etLoginPassword = (EditText)this.findViewById(R.id.et_login_password);
 
         if(!Patterns.EMAIL_ADDRESS.matcher(etLoginEmail.getText().toString()).matches()) {
@@ -88,14 +96,21 @@ public class LoginActivity extends AppCompatActivity {
 
     public void goToNextActivity(){
         Intent intent;
-        if(user.isAdmin()){
-            intent = new Intent(LoginActivity.this, AdminActivity.class);
-        }
-        else
-            intent = new Intent(LoginActivity.this, TestActivity.class);
+        try {
+            if(user.isAdmin()){
+                intent = new Intent(LoginActivity.this, AdminActivity.class);
+            }
+            else {
+                intent = new Intent(LoginActivity.this, TestActivity.class);
+            }
 
-        startActivity(intent);
-        finish();
+            startActivity(intent);
+            finish();
+        }
+        catch (NullPointerException ex){
+            intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+            startActivity(intent);
+        }
     }
 
 }

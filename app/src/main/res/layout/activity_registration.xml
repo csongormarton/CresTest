@@ -7,20 +7,22 @@
     android:orientation="vertical"
     android:background="@color/color_bg">
 
-    <ImageView
-        android:id="@+id/iv_Image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center"
-        android:src="@drawable/logo"
-        android:background="@color/color_bg"/>
 
     <EditText
-        android:id="@+id/et_login_email"
+        android:id="@+id/et_registration_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textSize="@dimen/dimen_et_textSize"
+        android:hint="@string/string_hint_name"/>
+
+    <EditText
+        android:id="@+id/et_registration_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:padding="10dp"
         android:singleLine="true"
         android:inputType="textEmailAddress"
@@ -28,7 +30,7 @@
         android:hint="@string/string_hint_email"/>
 
     <EditText
-        android:id="@+id/et_login_password"
+        android:id="@+id/et_registration_password1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -38,22 +40,23 @@
         android:textSize="@dimen/dimen_et_textSize"
         android:hint="@string/string_hint_password"/>
 
+    <EditText
+        android:id="@+id/et_registration_password2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:inputType="textPassword"
+        android:textSize="@dimen/dimen_et_textSize"
+        android:hint="@string/string_hint_repassword"/>
+
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_registration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
-        android:text="@string/string_login"/>
-
-    <TextView
-        android:id="@+id/tv_registration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/string_new_user"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:clickable="true" />
-
+        android:text="@string/string_registration"/>
 
 </LinearLayout>

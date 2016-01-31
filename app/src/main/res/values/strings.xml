@@ -1,17 +1,18 @@
 <resources>
     <string name="app_name">Cres Test</string>
 
-    <!-- Csongor -->
-    <string name="string_hint_loginName">Email</string>
-    <string name="string_hint_loginPassword">Jelszó</string>
+
+    <string name="string_hint_name">Név</string>
+    <string name="string_hint_email">Email</string>
+    <string name="string_hint_password">Jelszó</string>
+    <string name="string_hint_repassword">Jelszó megerősítés</string>
     <string name="string_login">Bejelentkezés</string>
-    <string name="string_registration">Új felhasználó regisztrálása!</string>
+    <string name="string_registration">Regisztráció</string>
+    <string name="string_new_user">Új felhasználó regisztrálása!</string>
     <string name="string_bad_email">Az email cím nem megfelelő!</string>
     <string name="string_empty_password_field">A jelszó mező üres!</string>
     <string name="string_btn_test_back">Vissza</string>
     <string name="string_btn_test_next">Következő</string>
     <string name="string_btn_test_submint">Vége</string>
-
-    <!-- Medea -->
 
 </resources>
