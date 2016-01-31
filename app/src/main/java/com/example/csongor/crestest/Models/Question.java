@@ -23,6 +23,10 @@ public class Question extends SugarRecord{
         return Answer.find(Answer.class, "question = ?", new String[]{getId().toString()});
     }
 
+    public List<Answer> getCorrectAnswers(){
+        return Answer.find(Answer.class, "question = ? and is_correct = ?", new String[]{getId().toString(), "1"});
+    }
+
     public String getQuestion() {
         return question;
     }

@@ -15,5 +15,7 @@
     <string name="string_btn_test_next">Következő</string>
     <string name="string_btn_test_submint">Vége</string>
     <string name="string_name_required">Név megadása kötelező!</string>
+    <string name="string_no_checked">Nincs bejelőlve válasz!</string>
+
 
 </resources>
