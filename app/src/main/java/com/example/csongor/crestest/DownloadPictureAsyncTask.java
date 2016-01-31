@@ -25,6 +25,7 @@ class DownloadPictureAsyncTask extends AsyncTask<String, Void, String> {
     private File directory;
     private Map<Long, String> pictures;
 
+
     public DownloadPictureAsyncTask(File directory, Map<Long, String> pictures){
         this.directory = directory;
         this.pictures = pictures;
