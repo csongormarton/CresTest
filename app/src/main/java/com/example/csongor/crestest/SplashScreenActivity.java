@@ -27,19 +27,19 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         this.directroy = this.getDir("imageDir", Context.MODE_PRIVATE);
 
-        /////////////////////////////
-        DatabaseSeeder databaseSeeder = new DatabaseSeeder(this);
-        databaseSeeder.seed();
-        /////////////////////////////
-
         SharedPreferences wmbPreference = PreferenceManager.getDefaultSharedPreferences(this);
         boolean isFirstRun = wmbPreference.getBoolean("FIRSTRUN", true);
         if (isFirstRun)
         {
+            /////////////////////////////
+            DatabaseSeeder databaseSeeder = new DatabaseSeeder(this);
+            databaseSeeder.seed();
+            /////////////////////////////
+
             ///////////////////
-            User user = new User("Admin", "admin@valami.hu", "123456", true);
+            User user = new User("Admin", "admin@valami.com", "123456", true);
             user.save();
-            User user2 = new User("User", "user@valami.hu", "123456", false);
+            User user2 = new User("User", "user@valami.com", "123456", false);
             user2.save();
 
             ///////////////////

@@ -30,6 +30,11 @@ public class RegistrationActivity extends AppCompatActivity {
         EditText etRegistrationPassword1 = (EditText)this.findViewById(R.id.et_registration_password1);
         EditText etRegistrationPassword2 = (EditText)this.findViewById(R.id.et_registration_password2);
 
+        if(etRegistrationName.length() == 0){
+            etRegistrationName.setError(this.getString(R.string.string_name_required));
+            return false;
+        }
+
         return true;
     }
 }

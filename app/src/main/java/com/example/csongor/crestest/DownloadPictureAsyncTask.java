@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.example.csongor.crestest.Models.Answer;
 import com.example.csongor.crestest.Models.Question;
 
 import java.io.File;
@@ -16,28 +17,44 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 class DownloadPictureAsyncTask extends AsyncTask<String, Void, String> {
     private File directory;
-    private Question question;
+    private Map<Long, String> pictures;
 
-    public DownloadPictureAsyncTask(File directory, Question question){
+    public DownloadPictureAsyncTask(File directory, Map<Long, String> pictures){
         this.directory = directory;
-        this.question = question;
+        this.pictures = pictures;
     }
 
     @Override
     protected String doInBackground(String... params) {
-        String filename = savePicture(loadPicture(params[0]));
+        for (Map.Entry<Long, String> entry : pictures.entrySet()){
+            String filename = savePicture(loadPicture(entry.getValue()));
+            Question q = Question.findById(Question.class, entry.getKey());
+            q.setPicture(filename);
+            q.save();
+        }
 
-        return filename;
+
+        return null;
     }
 
     @Override
     protected void onPostExecute(String s) {
-        question.setPicture(s);
-        Log.e("QUESTION: ", question.toString());
+        List<Question> questions = Question.listAll(Question.class);
+        Log.e("Valami: ", questions.size() + "");
+        Log.e("Pictures: ", this.pictures.size() + "");
+        for(Question q : questions){
+            Log.e("QUESTION: ", q.toString());
+            List<Answer> answers = q.getAnswers();
+            for (Answer a : answers){
+                Log.e("ANSWER: ", a.toString());
+            }
+        }
     }
 
     public Bitmap loadPicture(String url){
